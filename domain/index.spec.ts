@@ -1,6 +1,5 @@
-import * as matchers from "jest-extended";
-expect.extend(matchers);
+import { test } from ".";
 
 it("That's a test!", function () {
-    expect(1 + 1).toEqual(2);
+  expect(test()).toEqual(5);
 });
