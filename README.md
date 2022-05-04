@@ -1,10 +1,12 @@
 ## Getting Started
 
+```bash
+npm install
+```
+
 Start Project :
 
 ```bash
-npm install
-# or
 npm run dev
 ```
 
