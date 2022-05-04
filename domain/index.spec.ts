@@ -38,6 +38,9 @@ it("Test a caclul with operator *", function () {
 it("Test a negative result", function () {
   expect(polishReverse("24-")).toEqual(-2);
 });
+it("Test a negative number", function () {
+  expect(polishReverse("1NEGATE")).toEqual(-1);
+});
 it("Test a complexe calcul RNP", function () {
   expect(polishReverse("11+4*2/22++")).toEqual(8);
 });
