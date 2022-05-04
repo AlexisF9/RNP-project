@@ -17,6 +17,8 @@ export function calculateNegation(a:number):number {
 }
 
 export function calculate(a:number, op:Operator, b:number):number {
+  console.log(a,op,b);
+  
   switch (op) {
       case "+":
           return calculateAddition(a, b);
@@ -36,11 +38,9 @@ export function calculate(a:number, op:Operator, b:number):number {
 function idk(tab:Array<any>, i:number):Array<any> {
   if(tab[i] === "N"){
     tab[i-1] = calculate(Number(tab[i-1]),"N",0)
-    tab.splice(i,i+5)
+    tab.splice(i,6)
   }else{
-    let tmp = tab.slice(i-2,i)
-    tab[i-2] = calculate(Number(tmp[0]), tab[i], Number(tmp[1]))
-    tab[i-1] = tab[i] = ""
+    tab[i-2] = calculate(Number(tab[i-2]), tab[i], Number(tab[i-1]))
     tab.splice(i-1,2)
   }
 
