@@ -17,8 +17,6 @@ export function calculateNegation(a:number):number {
 }
 
 export function calculate(a:number, op:Operator, b:number):number {
-  console.log(a,op,b);
-  
   switch (op) {
       case "+":
           return calculateAddition(a, b);
@@ -35,7 +33,7 @@ export function calculate(a:number, op:Operator, b:number):number {
   }
 }
 
-function idk(tab:Array<any>, i:number):Array<any> {
+function format(tab:Array<any>, i:number):Array<any> {
   if(tab[i] === "N"){
     tab[i-1] = calculate(Number(tab[i-1]),"N",0)
     tab.splice(i,6)
@@ -49,10 +47,12 @@ function idk(tab:Array<any>, i:number):Array<any> {
 
 export function polishReverse(text:string):string {
   let tab = text.split("")
+
+  const search = (e) => e === "*" || e === "/" || e === "+" || e === "-" || e === "N";
   
-  while( tab.findIndex(e => e === "*"  || e === "/" || e === "+" || e === "-" || e === "N" ) !== -1) {
-      let i = tab.findIndex(e => e === "*"  || e === "/" || e === "+" || e === "-" || e === "N")
-      tab = idk(tab,i)
+  while( tab.findIndex(search) !== -1) {
+      let i = tab.findIndex(search)
+      tab = format(tab,i)
   }
 
   return tab[0]

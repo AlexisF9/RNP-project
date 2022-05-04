@@ -30,9 +30,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={css.main}>
-        <h1>
-          Calculateur d’expressions <span>en notation polonaise inversée</span>
-        </h1>
+        <h1>Calculateur en RPN</h1>
         <div className={css.calculator}>
           <div className={css.input} id="input">
             {calcul}
@@ -44,11 +42,17 @@ const Home: NextPage = () => {
               <div onClick={() => addCharacter("*")}>&times;</div>
               <div onClick={() => addCharacter("/")}>&divide;</div>
             </div>
+            <div
+              className={css.negateBtn}
+              onClick={() => addCharacter("NEGATE")}
+            >
+              NEGATE
+            </div>
             <div className={css.leftPanel}>
               <div className={css.numbers}>
-                <div onClick={() => addCharacter("7")}>7</div>
-                <div onClick={() => addCharacter("8")}>8</div>
-                <div onClick={() => addCharacter("9")}>9</div>
+                <div onClick={() => addCharacter("1")}>1</div>
+                <div onClick={() => addCharacter("2")}>2</div>
+                <div onClick={() => addCharacter("3")}>3</div>
               </div>
               <div className={css.numbers}>
                 <div onClick={() => addCharacter("4")}>4</div>
@@ -56,9 +60,9 @@ const Home: NextPage = () => {
                 <div onClick={() => addCharacter("6")}>6</div>
               </div>
               <div className={css.numbers}>
-                <div onClick={() => addCharacter("1")}>1</div>
-                <div onClick={() => addCharacter("2")}>2</div>
-                <div onClick={() => addCharacter("3")}>3</div>
+                <div onClick={() => addCharacter("7")}>7</div>
+                <div onClick={() => addCharacter("8")}>8</div>
+                <div onClick={() => addCharacter("9")}>9</div>
               </div>
               <div className={css.numbers}>
                 <div onClick={() => addCharacter("0")}>0</div>
@@ -76,6 +80,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        <div className={css.test}></div>
       </main>
     </div>
   );
