@@ -55,5 +55,8 @@ export function polishReverse(text:string):string {
       tab = format(tab,i)
   }
 
-  return tab[0]
+  console.log(typeof tab[0]);
+  
+
+  return typeof tab[0] === "number" ? tab[0] : "#ERROR"
 }

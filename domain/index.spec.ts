@@ -44,4 +44,7 @@ it("Test a negative number", function () {
 it("Test a complexe calcul RNP", function () {
   expect(polishReverse("11+4*2/22++")).toEqual(8);
 });
+it("Test error case", function () {
+  expect(polishReverse("2222-")).toEqual("#ERROR");
+});
 
