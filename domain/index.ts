@@ -55,8 +55,5 @@ export function polishReverse(text:string):string {
       tab = format(tab,i)
   }
 
-  console.log(typeof tab[0]);
-  
-
-  return typeof tab[0] === "number" ? tab[0] : "#ERROR"
+  return typeof tab[0] === "number" && !isNaN(tab[0]) ? tab[0] : "#ERROR"
 }

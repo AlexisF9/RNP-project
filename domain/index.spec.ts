@@ -47,4 +47,7 @@ it("Test a complexe calcul RNP", function () {
 it("Test error case", function () {
   expect(polishReverse("2222-")).toEqual("#ERROR");
 });
+it("Test error NaN case", function () {
+  expect(polishReverse("0/0")).toEqual("#ERROR");
+});
 
